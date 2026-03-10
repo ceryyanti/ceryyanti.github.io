@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Cery Yanti | Risol Vibes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff3131;
+            --soft-yellow: #fff4e0;
+            --deep-orange: #ff5e00;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--soft-yellow);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .risol-float {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 10s infinite linear;
+            filter: drop-shadow(0 5px 15px rgba(255, 49, 49, 0.3));
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .profile-card {
+            background: white;
+            border: 4px solid var(--primary-red);
+            box-shadow: 10px 10px 0px var(--primary-red);
+            transition: all 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0px var(--deep-orange);
+        }
+
+        .edu-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px dashed var(--primary-red);
+        }
+
+        .edu-circle {
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background: var(--primary-red);
+            border-radius: 50%;
+        }
+
+        .btn-red {
+            background-color: var(--primary-red);
+            color: white;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-red:hover {
+            transform: scale(1.1);
+            background-color: var(--deep-orange);
+        }
+
+        /* Risol SVG Shape */
+        .risol-shape {
+            width: 60px;
+            height: 30px;
+            background: #ffcc33;
+            border-radius: 15px;
+            border: 3px solid #b38600;
+            position: relative;
+            overflow: hidden;
+        }
+        .risol-shape::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 40px;
+            height: 4px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Animasi Risol Latar Belakang -->
+    <div id="risol-container" class="fixed inset-0 pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="p-6 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-bold text-red-600 tracking-wider">CERY.YNT</div>
+        <div class="space-x-6 hidden md:block">
+            <a href="#about" class="hover:text-red-500 font-semibold">Tentang</a>
+            <a href="#education" class="hover:text-red-500 font-semibold">Pendidikan</a>
+            <a href="#contact" class="hover:text-red-500 font-semibold">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-12 relative z-10">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <span class="bg-red-100 text-red-600 px-4 py-1 rounded-full font-bold text-sm uppercase tracking-widest">Halo Semuanya!</span>
+            <h1 class="text-5xl md:text-7xl mt-4 text-red-600 leading-tight">Cery Yanti</h1>
+            <p class="text-xl mt-6 text-gray-700 leading-relaxed">
+                Seorang siswi kreatif dari SMK Al-Irsyad Al-Islamiyyah yang menyukai desain dan tentu saja... Risol hangat! Mari jelajahi dunia ceria saya.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                <a href="#education" class="btn-red px-8 py-3 rounded-2xl font-bold text-lg shadow-lg">Lihat Riwayat</a>
+                <button onclick="addRisol()" class="border-2 border-red-600 text-red-600 px-8 py-3 rounded-2xl font-bold text-lg hover:bg-red-50 transition">Bikin Risol!</button>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 flex justify-center">
+            <div class="profile-card relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden p-2">
+                <!-- Fallback Profile Image -->
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Cery&backgroundColor=ffdfbf" alt="Foto Profil Cery Yanti" class="w-full h-full object-cover rounded-2xl bg-orange-100">
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl text-red-600 mb-8">Tentang Saya</h2>
+                <div class="text-lg text-gray-600 space-y-4">
+                    <p>
+                        Saya adalah pribadi yang ceria dan penuh semangat dalam belajar hal-hal baru. 
+                        Warna merah yang menyala melambangkan tekad saya untuk terus maju dan memberikan dampak positif bagi orang sekitar.
+                    </p>
+                    <p>
+                        Saat ini saya fokus mengembangkan diri di bidang kejuruan dan bercita-cita untuk menciptakan sesuatu yang bermanfaat melalui teknologi dan kreativitas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 relative z-10">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl text-red-600 mb-12 text-center">Riwayat Pendidikan</h2>
+            
+            <div class="max-w-2xl mx-auto space-y-12">
+                <!-- SMK -->
+                <div class="edu-item">
+                    <div class="edu-circle"></div>
+                    <span class="text-red-600 font-bold text-sm">2023 - 2026</span>
+                    <h3 class="text-2xl mt-1">SMK AL-IRSYAD AL-ISLAMIYYAH HAURGEULIS</h3>
+                    <p class="text-gray-600">Menempuh pendidikan menengah kejuruan dengan fokus pada pengembangan keahlian dan karakter.</p>
+                </div>
+
+                <!-- SMP -->
+                <div class="edu-item">
+                    <div class="edu-circle"></div>
+                    <span class="text-red-600 font-bold text-sm">2020 - 2023</span>
+                    <h3 class="text-2xl mt-1">SMP NEGERI 2 KROYA</h3>
+                    <p class="text-gray-600">Masa penemuan jati diri dan aktif dalam berbagai kegiatan kesiswaan.</p>
+                </div>
+
+                <!-- SD -->
+                <div class="edu-item border-none">
+                    <div class="edu-circle"></div>
+                    <span class="text-red-600 font-bold text-sm">2014 - 2020</span>
+                    <h3 class="text-2xl mt-1">SD NEGERI 1 JAYAMULYA</h3>
+                    <p class="text-gray-600">Langkah awal dalam menuntut ilmu dan membangun dasar pendidikan yang kuat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-red-600 py-12 text-white text-center relative z-10">
+        <h2 class="text-3xl mb-6">Mari Berteman!</h2>
+        <div class="flex justify-center gap-6 mb-8">
+            <a href="#" class="bg-white text-red-600 p-3 rounded-full hover:scale-110 transition">IG</a>
+            <a href="#" class="bg-white text-red-600 p-3 rounded-full hover:scale-110 transition">FB</a>
+            <a href="#" class="bg-white text-red-600 p-3 rounded-full hover:scale-110 transition">WA</a>
+        </div>
+        <p class="opacity-80">&copy; 2024 Cery Yanti. Dibuat dengan penuh Risol ❤️</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk membuat elemen risol melayang
+        function createRisol() {
+            const container = document.getElementById('risol-container');
+            const risol = document.createElement('div');
+            risol.className = 'risol-float';
+            
+            // Ukuran acak
+            const size = Math.random() * (40 - 20) + 20;
+            
+            // Desain Risol menggunakan HTML/CSS inline
+            risol.innerHTML = `
+                <div style="
+                    width: ${size * 2}px; 
+                    height: ${size}px; 
+                    background: #ffcc33; 
+                    border-radius: 20px; 
+                    border: 3px solid #b38600;
+                    position: relative;
+                ">
+                    <div style="position: absolute; top: 20%; left: 15%; width: 70%; height: 15%; background: rgba(255,255,255,0.4); border-radius: 10px;"></div>
+                </div>
+            `;
+            
+            // Posisi acak horizontal
+            risol.style.left = Math.random() * 100 + 'vw';
+            // Delay acak agar tidak seragam
+            risol.style.animationDelay = Math.random() * 5 + 's';
+            // Durasi acak
+            risol.style.animationDuration = (Math.random() * 5 + 7) + 's';
+            
+            container.appendChild(risol);
+            
+            // Hapus setelah animasi selesai
+            setTimeout(() => {
+                risol.remove();
+            }, 12000);
+        }
+
+        // Jalankan awal
+        for(let i = 0; i < 15; i++) {
+            createRisol();
+        }
+
+        // Tambah risol terus menerus
+        setInterval(createRisol, 2000);
+
+        // Fungsi manual dari tombol
+        function addRisol() {
+            for(let i = 0; i < 5; i++) {
+                createRisol();
+            }
+        }
+    </script>
+</body>
+  </html>
