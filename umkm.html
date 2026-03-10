@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Rimat | Ahlinya Risol Lezat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bg-yellow-custom { background-color: #FFD700; }
+        .bg-red-custom { background-color: #E63946; }
+        .text-red-custom { color: #E63946; }
+        .text-yellow-custom { color: #FFD700; }
+        
+        .card-menu:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-red-custom text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter">TOKO <span class="text-yellow-custom">RIMAT</span></h1>
+            <div class="hidden md:flex space-x-6 font-medium">
+                <a href="#beranda" class="hover:text-yellow-custom">Beranda</a>
+                <a href="#menu" class="hover:text-yellow-custom">Menu</a>
+                <a href="#kontak" class="hover:text-yellow-custom">Kontak</a>
+            </div>
+            <a href="https://wa.me/6285797158070" target="_blank" class="bg-yellow-custom text-red-700 px-4 py-2 rounded-full font-bold text-sm hover:bg-yellow-400 transition">
+                Pesan Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="beranda" class="relative bg-yellow-custom py-20 overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left z-10">
+                <h2 class="text-5xl md:text-6xl font-black text-red-custom leading-tight mb-4">
+                    Risol Hangat, <br>Rasa Juara!
+                </h2>
+                <p class="text-red-800 text-lg mb-8 font-medium">
+                    Nikmati kelezatan risol premium dengan berbagai pilihan isian yang lumer di mulut. Dibuat fresh setiap hari khusus untuk Anda.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#menu" class="bg-red-custom text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:bg-red-700 transition">Lihat Menu</a>
+                    <div class="flex items-center justify-center space-x-2 text-red-700 font-bold">
+                        <span class="text-2xl">Mulai Rp 2.000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 relative flex justify-center">
+                <!-- SVG Placeholder for Risol Illustration -->
+                <div class="w-64 h-64 md:w-96 md:h-96 bg-red-custom rounded-full flex items-center justify-center border-8 border-white shadow-2xl overflow-hidden">
+                   <i class="fa-solid fa-hotdog text-yellow-custom text-8xl md:text-9xl"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative shapes -->
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-red-custom rounded-full opacity-10"></div>
+        <div class="absolute -top-10 -right-10 w-60 h-60 bg-red-custom rounded-full opacity-10"></div>
+    </header>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-red-custom text-4xl font-bold mb-2">Menu Favorit</h3>
+            <div class="w-20 h-1 bg-yellow-custom mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Menu Item 1 -->
+                <div class="card-menu bg-gray-50 rounded-3xl overflow-hidden shadow-md border-t-4 border-yellow-custom">
+                    <div class="p-8">
+                        <div class="w-20 h-20 bg-red-custom rounded-2xl mx-auto flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-egg text-yellow-custom text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-800 mb-2">Risol Mayo</h4>
+                        <p class="text-gray-600 mb-6">Isian telur, smoked beef, dan saus mayo creamy yang melimpah.</p>
+                        <span class="inline-block bg-yellow-custom text-red-700 font-black px-4 py-2 rounded-lg">Rp 2.000+</span>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="card-menu bg-gray-50 rounded-3xl overflow-hidden shadow-md border-t-4 border-red-custom">
+                    <div class="p-8">
+                        <div class="w-20 h-20 bg-yellow-custom rounded-2xl mx-auto flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-fire text-red-custom text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-800 mb-2">Risol Ayam Pedas</h4>
+                        <p class="text-gray-600 mb-6">Suwiran ayam bumbu rempah rahasia dengan level pedas nagih.</p>
+                        <span class="inline-block bg-red-custom text-white font-black px-4 py-2 rounded-lg">Rp 2.000+</span>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="card-menu bg-gray-50 rounded-3xl overflow-hidden shadow-md border-t-4 border-yellow-custom">
+                    <div class="p-8">
+                        <div class="w-20 h-20 bg-red-custom rounded-2xl mx-auto flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-circle text-yellow-custom text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-800 mb-2">Risol Bakso</h4>
+                        <p class="text-gray-600 mb-6">Isian bakso kenyal dengan bumbu gurih yang khas.</p>
+                        <span class="inline-block bg-yellow-custom text-red-700 font-black px-4 py-2 rounded-lg">Rp 2.000+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA Section -->
+    <section id="kontak" class="py-16 bg-red-custom text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-6">Lapar? Pesan Langsung Di Sini!</h3>
+            <p class="text-yellow-custom text-xl mb-10 font-medium italic">"Toko Rimat - Murah Harganya, Mewah Rasanya"</p>
+            
+            <div class="flex flex-col items-center">
+                <a href="https://wa.me/6285797158070" target="_blank" class="flex items-center space-x-3 bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold shadow-2xl transition-all scale-100 hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-3xl"></i>
+                    <span>085797158070</span>
+                </a>
+                <p class="mt-6 text-red-200">Menerima pesanan untuk acara pesta, rapat, atau snack box.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 TOKO RIMAT. Semua Hak Dilindungi.</p>
+            <p class="mt-2 flex justify-center items-center gap-2">
+                Dibuat dengan <i class="fa-solid fa-heart text-red-500"></i> untuk Pecinta Risol
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
